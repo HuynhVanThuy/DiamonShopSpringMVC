@@ -12,9 +12,7 @@ import DiamonShop.Entity.MapperSlides;
 import DiamonShop.Entity.Slides;
 
 @Repository
-public class SlidesDao {
-	@Autowired
-	public JdbcTemplate _jdbcTemplate;
+public class SlidesDao extends BaseDao{
 	
 	public List<Slides> GetDataSlide(){
 		List<Slides> list = new ArrayList<Slides>();

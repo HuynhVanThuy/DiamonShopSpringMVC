@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <header id="header">
 	<div class="row">
 		<div class="span4">
@@ -43,12 +44,16 @@ Navigation Bar Section
 			</a>
 			<div class="nav-collapse">
 				<ul class="nav">
-					<li class="active"><a href="index.html">Home </a></li>
-					<li class=""><a href="list-view.html">List View</a></li>
-					<li class=""><a href="grid-view.html">Grid View</a></li>
-					<li class=""><a href="three-col.html">Three Column</a></li>
-					<li class=""><a href="four-col.html">Four Column</a></li>
-					<li class=""><a href="general.html">General Content</a></li>
+					<c:forEach var="item" items="${ menus }" varStatus="index">
+						<c:if test="${ index.first }">
+							<li class="active">
+						</c:if>
+						<c:if test="${ not index.first }">
+							<li class="">
+						</c:if>
+						<a href="index.html">${ item.name } </a></li>
+					</c:forEach>
+					
 				</ul>
 				<form action="#" class="navbar-search pull-left">
 					<input type="text" placeholder="Search" class="search-query span2">
@@ -56,7 +61,7 @@ Navigation Bar Section
 				<ul class="nav pull-right">
 					<li class="dropdown"><a data-toggle="dropdown"
 						class="dropdown-toggle" href="#"><span class="icon-lock"></span>
-							Login <b class="caret"></b></a>
+							Đăng nhập <b class="caret"></b></a>
 						<div class="dropdown-menu">
 							<form class="form-horizontal loginFrm">
 								<div class="control-group">
