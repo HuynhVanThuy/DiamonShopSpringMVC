@@ -130,81 +130,29 @@ New Products
 			<div class="row-fluid">
 				<div id="newProductCar" class="carousel slide">
 					<div class="carousel-inner">
+					<c:if test="${ products.size() > 0 }">
 						<div class="item active">
 							<ul class="thumbnails">
-								<li class="span3">
-									<div class="thumbnail">
-										<a class="zoomTool" href="product_details.html"
-											title="add to cart"><span class="icon-search"></span>
-											QUICK VIEW</a> <a href="#" class="tag"></a> <a
-											href="product_details.html"><img
-											src="/assets/img/bootstrap-ring.png" alt="bootstrap-ring"></a>
-									</div>
-								</li>
-								<li class="span3">
-									<div class="thumbnail">
-										<a class="zoomTool" href="product_details.html"
-											title="add to cart"><span class="icon-search"></span>
-											QUICK VIEW</a> <a href="#" class="tag"></a> <a
-											href="product_details.html"><img src="assets/img/i.jpg"
-											alt=""></a>
-									</div>
-								</li>
-								<li class="span3">
-									<div class="thumbnail">
-										<a class="zoomTool" href="product_details.html"
-											title="add to cart"><span class="icon-search"></span>
-											QUICK VIEW</a> <a href="#" class="tag"></a> <a
-											href="product_details.html"><img src="assets/img/g.jpg"
-											alt=""></a>
-									</div>
-								</li>
+							<c:forEach var="item" items="${ products }" varStatus="loop">
 								<li class="span3">
 									<div class="thumbnail">
 										<a class="zoomTool" href="product_details.html"
 											title="add to cart"><span class="icon-search"></span>
 											QUICK VIEW</a> <a href="product_details.html"><img
-											src="assets/img/s.png" alt=""></a>
+											src="<c:url value="/assets/user/img/${ item.img }"/>" alt=""></a>
 									</div>
 								</li>
-							</ul>
-						</div>
-						<div class="item">
-							<ul class="thumbnails">
-								<li class="span3">
-									<div class="thumbnail">
-										<a class="zoomTool" href="product_details.html"
-											title="add to cart"><span class="icon-search"></span>
-											QUICK VIEW</a> <a href="product_details.html"><img
-											src="assets/img/i.jpg" alt=""></a>
+								<c:if test="${ (loop.index + 1) % 4 == 0 || (loop.index + 1)  == products.size() }">
+										</ul>
 									</div>
-								</li>
-								<li class="span3">
-									<div class="thumbnail">
-										<a class="zoomTool" href="product_details.html"
-											title="add to cart"><span class="icon-search"></span>
-											QUICK VIEW</a> <a href="product_details.html"><img
-											src="assets/img/f.jpg" alt=""></a>
-									</div>
-								</li>
-								<li class="span3">
-									<div class="thumbnail">
-										<a class="zoomTool" href="product_details.html"
-											title="add to cart"><span class="icon-search"></span>
-											QUICK VIEW</a> <a href="product_details.html"><img
-											src="assets/img/h.jpg" alt=""></a>
-									</div>
-								</li>
-								<li class="span3">
-									<div class="thumbnail">
-										<a class="zoomTool" href="product_details.html"
-											title="add to cart"><span class="icon-search"></span>
-											QUICK VIEW</a> <a href="product_details.html"><img
-											src="assets/img/j.jpg" alt=""></a>
-									</div>
-								</li>
-							</ul>
-						</div>
+									<c:if test="${ (loop.index + 1) < products.size() }">
+										<div class="item">
+											<ul class="thumbnails">
+									</c:if>
+								</c:if>
+							</c:forEach>
+					</c:if>
+						
 					</div>
 					<a class="left carousel-control" href="#newProductCar"
 						data-slide="prev">&lsaquo;</a> <a class="right carousel-control"
@@ -220,7 +168,7 @@ New Products
 			<h3>
 				<a class="btn btn-mini pull-right" href="products.html"
 					title="View more">VIew More<span class="icon-plus"></span></a>
-				Sản phẩn nổi bật
+				Sản phẩm nổi bật
 			</h3>
 			<hr class="soften" />
 			<div class="row-fluid">
