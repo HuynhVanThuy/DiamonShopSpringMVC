@@ -7,7 +7,7 @@ import DiamonShop.Dto.PaginatesDto;
 public class PaginateServiceImpl {
 	public PaginatesDto GetInfoPaginates(int totalData, int limit, int currentPage) {
 		PaginatesDto paginate = new PaginatesDto();
-		paginate.setLimit(limit);;
+		paginate.setLimit(limit);
 		paginate.setTotalPage(SetInfoTotalPage(totalData, limit));
 		paginate.setCurrentPage(CheckCurrentPage(currentPage ,paginate.getTotalPage()));
 		int start = FindStart(paginate.getCurrentPage(), limit);
