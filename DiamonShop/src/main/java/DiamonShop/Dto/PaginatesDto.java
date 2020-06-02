@@ -3,7 +3,7 @@ package DiamonShop.Dto;
 public class PaginatesDto {
 	private int currentPage, limit, start, end, totalPage;
 
-	public PaginatesDto(int currentPage, int limit, int start, int end, int totalPage) {
+	public PaginatesDto() {
 		super();
 	}
 
