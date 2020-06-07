@@ -42,7 +42,7 @@
 					</a> <a href="#"><span class="icon-user"></span> My Account</a> <a
 						href="register.html"><span class="icon-edit"></span> Free
 						Register </a> <a href="contact.html"><span class="icon-envelope"></span>
-						Contact us</a> <a href="cart.html"><span
+						Contact us</a> <a href="<c:url value="/gio-hang"/>"><span
 						class="icon-shopping-cart"></span> ${ TotalQuantyCart } Sản phẩm - <span
 						class="badge badge-warning"><fmt:formatNumber type="number" groupingUsed="true" value="${ TotalPriceCart }"/> ₫</span></a>
 				</div>
